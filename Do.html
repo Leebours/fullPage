@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>仿网易邮箱6.0部分画面</title>
+    <link href="css/jquery.fullPage.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+    <!--<script type="text/javascript" src="js/snow.js"></script>-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 16px/1.8 "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+        }
+
+        .section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section1 {
+            width: 100%;
+            height: 100%;
+            background: url("img/section10.jpg") no-repeat center;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+
+        .section1_bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url("img/bg101.png") no-repeat center;
+        }
+
+        .section1-h1 {
+            width: 0;
+            height: 79px;
+            background: url("img/bg102.png") no-repeat center;
+            -webkit-background-size: cover;
+            background-size: cover;
+            opacity: 0;
+            margin: 200px auto 50px;
+            transition: all .7s linear;
+        }
+
+        .section1-h2 {
+            width: 555px;
+            height: 0;
+            background: url("img/bg103.png") no-repeat center;
+            -webkit-background-size: cover;
+            background-size: cover;
+            opacity: 0;
+            margin: 0 auto;
+            transition: all .7s linear;
+        }
+
+        .section1-p {
+            width: 254px;
+            height: 70px;
+            background: url("img/btn.png") no-repeat center;
+            -webkit-background-size: cover;
+            background-size: cover;
+            margin: 30% auto 0;
+            opacity: 0;
+            transition: all 1s;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -o-transition: all 1s;
+        }
+
+        .section1 p:hover {
+            cursor: pointer;
+        }
+
+        .active .section1-h1 {
+            width: 465px;
+            height: 79px;
+            background: url("img/bg102.png") no-repeat center;
+            opacity: 1;
+        }
+
+        .active .section1-h2 {
+            width: 555px;
+            height: 37px;
+            background: url("img/bg103.png") no-repeat center;
+            opacity: 1;
+            margin: 0 auto;
+            transition-delay: .5s;
+        }
+
+        .active .section1-p {
+            margin: 150px auto 0;
+            opacity: 1;
+            transition-delay: .5s;
+        }
+
+        .section2 {
+            background: url("img/section2.jpg") no-repeat center;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+
+        .section2_h1 {
+            width: 512px;
+            height: 45px;
+            background: url("img/t2.png") no-repeat center;
+            margin: 0 auto 2%;
+            opacity: 0;
+            transition: all .7s linear;
+        }
+
+        .section2_p {
+            width: 512px;
+            height: auto;
+            margin: 0 auto 3%;
+            color: #727F8C;
+            opacity: 0;
+            line-height: 30px;
+            transition: all .7s linear;
+        }
+
+        .section2_bg {
+            width: 819px;
+            height: 325px;
+            background: url("img/bg23.png") no-repeat center;
+            margin: -50% auto 5%;
+            position: relative;
+            opacity: 0;
+            transition: all .7s linear;
+        }
+
+        .section2_left {
+            width: 233px;
+            height: 250px;
+            background: url("img/bg21.png") no-repeat center;
+            position: absolute;
+            z-index: 10;
+            left: -70%;
+            top: 30%;
+            transition: all .5s;
+            -webkit-transition: all .5s;
+            -moz-transition: all .5s;
+            -o-transition: all .5s;
+            opacity: 0;
+        }
+
+        .section2_right {
+            width: 211px;
+            height: 299px;
+            background: url("img/bg22.png") no-repeat center;
+            position: absolute;
+            z-index: 10;
+            right: -70%;
+            top: 30%;
+            opacity: 0;
+            transition: all .5s linear;
+        }
+
+        .active .section2_h1 {
+            margin: 0 auto 2%;
+            opacity: 1;
+        }
+
+        .active .section2_p {
+            margin: 0 auto;
+            opacity: 1;
+            -webkit-transition-delay: .5s;
+            -moz-transition-delay: .5s;
+            -ms-transition-delay: .5s;
+            -o-transition-delay: .5s;
+            transition-delay: .5s;
+        }
+
+        .active .section2_bg {
+            margin: 5% auto;
+            opacity: 1;
+        }
+
+        .active .section2_left {
+            left: -27%;
+            top: 5%;
+            opacity: 1;
+            transition-delay: .7s;
+        }
+
+        .active .section2_right {
+            right: -15%;
+            opacity: 1;
+            top: -15%;
+            transition-delay: .7s;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div id="fullPage">
+    <div class="section section1 ">
+        <div class="section1_bg ">
+            <h1 class="section1-h1"></h1>
+            <h2 class="section1-h2"></h2>
+            <p class="section1-p" onclick=""></p>
+        </div>
+    </div>
+
+    <div class="section section2">
+        <h1 class="section2_h1"></h1>
+        <p class="section2_p">秉承网易邮箱经典的清新简洁的设计风格，邮箱 6.0 版带来全新一代的设计理念，更追求极致唯美的视觉设计、传承更多人文和艺术底蕴，华丽蜕变，带来更舒服更爽心悦目的视觉享受。</p>
+        <div class="section2_bg">
+            <div class="section2_left"></div>
+            <div class="section2_right"></div>
+        </div>
+    </div>
+    <div class="section">
+    </div>
+
+    <div class="section">
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#fullPage').fullpage({
+            sectionsColor: ['', '', '#88d6ff', '#66ff9f'],
+            navigation: true,
+            anchors: ['page1', 'page2', 'page3', 'page4'],
+            recordHistory: true,
+            scrollingSpeed: 1000,
+            verticalCentered: true,
+            resize: true,
+            css3: true,
+            continuousVertical: true,
+            afterLoad: function (link, index) {
+                switch (index) {
+                    case 1:
+//                        move('.section1 h1').set('width', '465px').end();
+//                        move('.section1 h1').set('opacity', '1').end();
+//                        move('.section1 h2').set('top', '47%').end();
+//                        move('.section1 h2').set('opacity', '1').end();
+//                        move('.section1 p').set('margin', '150px auto 0%').end();
+//                        move('.section1 p').set('opacity', '1').end();
+                        break;
+                    case 2:
+//                        move('.section2 h1').set(' margin', '0 auto 2%;').end();
+//                        move('.section2 h1').set('opacity', '1').end();
+//                        move('.section2 p').set('margin', '0 auto;').end();
+//                        move('.section2 p').set('opacity', '1').end();
+//                        move('.section2_bg').set('margin', '5% auto').end();
+//                        move('.section2_bg').set('opacity', '1').end();
+//                        move('.section2_left').set('left', '-27%').end();
+//                        move('.section2_left').set('top', '-15%').end();
+//                        move('.section2_left').set('opacity', '1').end();
+//                        move('.section2_right').set('right', '-15%').end();
+//                        move('.section2_right').set('opacity', '1').end();
+//                        move('.section2_right').set('top', '-15%').end();
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        break;
+                }
+            },
+            onLeave: function (link, index) {
+                switch (index) {
+                    case 1:
+//                        move('.section1 h1').set('width', '0').end();
+//                        move('.section1 h1').set('opacity', '0').end();
+//                        move('.section1 h2').set('top', '40%').end();
+//                        move('.section1 h2').set('opacity', '0').end();
+//                        move('.section1 p').set('margin', '30% auto 0').end();
+//                        move('.section1 p').set('opacity', '0').end();
+                        break;
+                    case 2:
+//                        move('.section2 h1').set(' margin', '4% auto 2%').end();
+//                        move('.section2 h1').set('opacity', '0').end();
+//                        move('.section2 p').set('margin', '0 auto 3%;').end();
+//                        move('.section2 p').set('opacity', '0').end();
+//                        move('.section2_bg').set('margin', '-50% auto 5%').end();
+//                        move('.section2_bg').set('opacity', '0').end();
+//                        move('.section2_left').set('left', '27%').end();
+//                        move('.section2_left').set('top', '30%').end();
+//                        move('.section2_left').set('opacity', '0').end();
+//                        move('.section2_right').set('right', '25%').end();
+//                        move('.section2_right').set('opacity', '0').end();
+//                        move('.section2_right').set('top', '30%').end();
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        break;
+                }
+            },
+            afterRender: function (link, index) {
+                switch (index) {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+
+    });
+
+</script>
+<script type="text/javascript" src="js/move.js"></script>
+</body>
+</html>
